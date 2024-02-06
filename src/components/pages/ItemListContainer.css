@@ -1,0 +1,14 @@
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tarjetas{
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
