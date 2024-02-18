@@ -1,6 +1,7 @@
 import "./ProductCard.css"
 
 export const ProductCard = ({producto,img,precio}) => {
+  
   return (
     <div >
         <h3>{producto}</h3>

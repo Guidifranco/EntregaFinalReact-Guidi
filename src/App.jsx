@@ -1,22 +1,15 @@
-import "./App.css"
-import { Navbar } from "./components/layout/Navbar"
-import { ItemListContainer } from "./components/pages/ItemListContainer"
-
+import "./App.css";
+import { NavbarContainer } from "./components/layout/navbar/NavbarContainer";
+import { ItemListContainer } from "./components/pages/itemListContainer/ItemListContainer";
 
 function App() {
-
   return (
-
     <div>
-      <Navbar />
+      <NavbarContainer />
 
-
-      <ItemListContainer greeting="Bienvenidos A La Tienda"/>
-
-
+      <ItemListContainer greeting="Bienvenidos A La Tienda" />
     </div>
-  )
+  );
 }
 
-export default App
-
+export default App;
