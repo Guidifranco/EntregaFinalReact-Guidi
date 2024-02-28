@@ -1,14 +1,18 @@
-.titulo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+.titulo {
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 35px;
+  font-size: 36px;
+  color: #333;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Establece una fuente elegante */
+  border-radius: 8px; /* Añade bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
 }
 
-.tarjetas{
-    padding: 15px;
-    margin: 15px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.productCardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(30% - 20px), 1fr));
+  gap: 20px;
+  justify-content: space-around;
 }

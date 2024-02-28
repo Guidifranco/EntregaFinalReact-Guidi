@@ -1,28 +1,27 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-nav{
-    margin-bottom: 30px;
+nav {
+  margin-bottom: 30px;
 }
 
-.bulletPoint{
-    padding: 10px;
-    background-color: rgb(232, 198, 249);
-    display: flex;
-    align-items:center;
-    justify-content: space-between;
-    cursor: pointer;
+.bulletPoint {
+  list-style: none;
+  padding: 10px;
+  background-color: rgb(232, 198, 249);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
-.cart{
-    list-style: none;
-    padding-right: 15px;
+a {
+  text-decoration: none;
 }
 
-.logo{
-    list-style: none;
-    font-size: 20px;
-    font-style: italic;
+.cart {
+  list-style: none;
+  padding-right: 15px;
 }

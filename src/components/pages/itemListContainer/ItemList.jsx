@@ -1,35 +1,26 @@
 import { ProductCardContainer } from "../../common/productCard/ProductCardContainer";
 
 
-export const ItemList = ({greeting}) => {
+export const ItemList = ({ items }) => {
 
 
   return (
     <div>
-      <h1 className="titulo">{greeting}</h1>
+      <div className="titulo">
+        <h4>Minim Cuadros</h4>
+      </div>
 
-      <div className="tarjetas">
-        <ProductCardContainer
-          producto={"Moneda Griega"}
-          img={
-            "https://res.cloudinary.com/dkzpfaxxe/image/upload/v1707235917/default-featured-image_st0jr2.png"
-          }
-          precio={2500}
-        />
-        <ProductCardContainer
-          producto={"Moneda Romana"}
-          img={
-            "https://res.cloudinary.com/dkzpfaxxe/image/upload/v1707235917/default-featured-image_st0jr2.png"
-          }
-          precio={2500}
-        />
-        <ProductCardContainer
-          producto={"Moneda Argentina"}
-          img={
-            "https://res.cloudinary.com/dkzpfaxxe/image/upload/v1707235917/default-featured-image_st0jr2.png"
-          }
-          precio={2500}
-        />
+      <div className="productCardContainer">
+        {items.map(({ id, img, title, description, price }) => (
+          <ProductCardContainer
+            key={id}
+            id={id}
+            img={img}
+            title={title}
+            description={description}
+            price={price}
+          />
+        ))}
       </div>
     </div>
   );

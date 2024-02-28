@@ -1,0 +1,69 @@
+.tarjeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 20px;
+}
+
+.imagen-columna {
+  flex: 1;
+  margin-right: 20px;
+  max-width: 400px;
+}
+
+.texto-columna {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.texto-columna h4,
+.texto-columna h3 {
+  margin: 10px;
+}
+
+.texto-columna h4 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.texto-columna h3 {
+  text-align: center;
+}
+
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter-container h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.counter-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.counter-buttons button {
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.counter-buttons button svg {
+  margin-left: 8px;
+}
+
+.counter-display {
+  font-size: 18px;
+  font-weight: bold;
+}

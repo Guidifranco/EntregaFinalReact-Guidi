@@ -12,21 +12,19 @@ import {
 } from "@mui/material";
 import "./Navbar.css";
 import { CartWidgetContainer } from "../../common/cartWidget/CartWidgetContainer";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
-
-    
   return (
-    <nav>
+    <nav >
       <ul className="bulletPoint">
-        <li>Home</li>
-        <li>Catálogo</li>
-        <li className="logo">Guidi E-commerce</li>
-        <li>Contacto</li>
-        <li className="cart">
-          {" "}
-          <CartWidgetContainer />{" "}
-        </li>
+        <Link to={"/"}><li>Home</li></Link>
+        <Link to={"/category/Automovilismo"}><li>Automovilismo</li></Link>
+        <Link to={"/category/Futbol"}><li>Futbol</li></Link>
+        <Link to={"/category/Cine"}><li>Cine</li></Link>
+        <Link to={"/cart"}><li >
+          {" "}<CartWidgetContainer />{" "}
+        </li></Link>
       </ul>
     </nav>
   );

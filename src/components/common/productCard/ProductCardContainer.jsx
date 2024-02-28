@@ -1,11 +1,21 @@
 import { ProductCard } from "./ProductCard";
 
-export const ProductCardContainer = ({ producto, img, precio }) => {
-
-    
+export const ProductCardContainer = ({
+  id,
+  img,
+  title,
+  description,
+  price,
+}) => {
   return (
     <div>
-      <ProductCard producto={producto} img={img} precio={precio} />
+      <ProductCard
+        id={id}
+        title={title}
+        img={img}
+        description={description}
+        price={price}
+      />
     </div>
   );
 };
