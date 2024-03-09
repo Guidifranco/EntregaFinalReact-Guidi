@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ProductDetail } from "./ProductDetail";
 import { useEffect, useState } from "react";
 import { getProduct } from "../../../productMock";
@@ -19,6 +19,17 @@ export const ProductDetailContainer = () => {
     });
   }, [id]);
 
+  const navigate = useNavigate()
+
+  const onAdd = (cantidad) => {
+    let infoProducto = {
+      ...item,
+      quantity: cantidad,
+    };
+    console.log(infoProducto)
+    navigate("/cart");
+  };
+
   return (
     <div>
       {isLoading ? (
@@ -30,6 +41,7 @@ export const ProductDetailContainer = () => {
           increment={increment}
           decrement={decrement}
           reset={reset}
+          onAdd={onAdd}
         />
       )}
     </div>

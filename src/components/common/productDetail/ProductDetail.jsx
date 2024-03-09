@@ -1,7 +1,14 @@
 import "./ProductDetail.css";
 import { IoCartOutline } from "react-icons/io5";
 
-export const ProductDetail = ({ item, count, increment, decrement, reset }) => {
+export const ProductDetail = ({
+  item,
+  count,
+  increment,
+  decrement,
+  reset,
+  onAdd,
+}) => {
   return (
     <div className="tarjeta">
       <img className="imagen-columna" src={item.img} alt={item.title} />
@@ -14,7 +21,9 @@ export const ProductDetail = ({ item, count, increment, decrement, reset }) => {
         <h3> Agregar al carrito </h3>
         <div className="counter-buttons">
           <button onClick={decrement}>-</button>
-          <button onClick={reset} className="counter-display">{count} <IoCartOutline size={25} /></button>
+          <button onClick={()=>onAdd(count)} className="counter-display">
+            {count} <IoCartOutline size={25} />
+          </button>
           <button onClick={increment}>+</button>
         </div>
       </div>

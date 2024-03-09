@@ -22,9 +22,7 @@ export const Navbar = () => {
         <Link to={"/category/Automovilismo"}><li>Automovilismo</li></Link>
         <Link to={"/category/Futbol"}><li>Futbol</li></Link>
         <Link to={"/category/Cine"}><li>Cine</li></Link>
-        <Link to={"/cart"}><li >
-          {" "}<CartWidgetContainer />{" "}
-        </li></Link>
+        <Link to={"/cart"}><CartWidgetContainer /></Link>
       </ul>
     </nav>
   );
