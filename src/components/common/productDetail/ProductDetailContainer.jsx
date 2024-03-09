@@ -1,8 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { ProductDetail } from "./ProductDetail";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getProduct } from "../../../productMock";
 import { useCount } from "../../../hooks/useCount";
+import { CartContext } from "../../../context/cartContext";
 
 export const ProductDetailContainer = () => {
   const { id } = useParams();
@@ -10,6 +11,11 @@ export const ProductDetailContainer = () => {
 
   const [item, setItem] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  const { addToCart, getTotalQuantityById } = useContext(CartContext);
+
+  const initial = getTotalQuantityById(id)
+  console.log(initial)
 
   useEffect(() => {
     console.log("ID:", id);
@@ -19,14 +25,14 @@ export const ProductDetailContainer = () => {
     });
   }, [id]);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const onAdd = (cantidad) => {
     let infoProducto = {
       ...item,
       quantity: cantidad,
     };
-    console.log(infoProducto)
+    console.log(infoProducto);
     navigate("/cart");
   };
 
@@ -42,6 +48,7 @@ export const ProductDetailContainer = () => {
           decrement={decrement}
           reset={reset}
           onAdd={onAdd}
+          initial={initial}
         />
       )}
     </div>

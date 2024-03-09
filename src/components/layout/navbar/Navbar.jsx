@@ -16,13 +16,13 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <nav >
+    <nav>
       <ul className="bulletPoint">
-        <Link to={"/"}><li>Home</li></Link>
-        <Link to={"/category/Automovilismo"}><li>Automovilismo</li></Link>
-        <Link to={"/category/Futbol"}><li>Futbol</li></Link>
-        <Link to={"/category/Cine"}><li>Cine</li></Link>
-        <Link to={"/cart"}><CartWidgetContainer /></Link>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/category/Automovilismo"}>Automovilismo</Link>
+        <Link to={"/category/Futbol"}>Futbol</Link>
+        <Link to={"/category/Cine"}>Cine</Link>
+        <CartWidgetContainer />
       </ul>
     </nav>
   );
