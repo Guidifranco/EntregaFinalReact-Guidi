@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+.desc img {
+  width: 30%;
+}
+
 .desc h4 {
   padding: 10px;
 }

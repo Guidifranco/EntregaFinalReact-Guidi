@@ -1,22 +1,29 @@
 import { useState } from "react";
 
-export const useCount = (initial = 0) => {
+export const useCount = ({stock, initial=1}) => {
   const [count, setCount] = useState(initial);
 
-  const increment = () => {
-    setCount(count + 1);
-  };
-
-  const decrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  };
 
   const reset = () => {
     console.log("Se agrego al carrito");
     setCount(0);
   };
 
-  return { count, increment, decrement, reset };
+  const addOne = () => {
+    if (count < stock) {
+      setCount(count + 1);
+    } else {
+        alert("Stock maximo")
+    }
+  }
+
+    const subOne = () => {
+        if (count > 1) {
+          setCount(count - 1);
+        } else {
+          alert("no puede ser menos de 1");
+        }
+      };
+
+  return { count, reset, addOne, subOne };
 };

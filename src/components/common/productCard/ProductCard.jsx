@@ -8,7 +8,7 @@ export const ProductCard = ({ id, title, img, description, price }) => {
       <div>
         <h3>{title}</h3>
         <img src={img} alt={title} />
-        <Link to={`/item/${id}`}>
+        <Link to={`/item/${+id}`}>
           <button>Detalles</button>
         </Link>
       </div>
@@ -16,5 +16,4 @@ export const ProductCard = ({ id, title, img, description, price }) => {
   );
 };
 
-//"<ProductDetailContainer />"
-/*  */
+

@@ -7,19 +7,16 @@ import { CartContext } from "../../../context/cartContext";
 
 export const ProductDetailContainer = () => {
   const { id } = useParams();
-  const { count, increment, decrement, reset } = useCount(1);
-
   const [item, setItem] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   const { addToCart, getTotalQuantityById } = useContext(CartContext);
 
-  const initial = getTotalQuantityById(id)
-  console.log(initial)
+  const initial = getTotalQuantityById(id);
+  console.log(initial);
 
   useEffect(() => {
-    console.log("ID:", id);
-    getProduct(id).then((resp) => {
+    getProduct(+id).then((resp) => {
       setItem(resp);
       setIsLoading(false);
     });
@@ -27,12 +24,16 @@ export const ProductDetailContainer = () => {
 
   const navigate = useNavigate();
 
+  const { count, reset, addOne, subOne } = useCount({
+    stock: item ? item.stock : 0,
+  });
+
   const onAdd = (cantidad) => {
     let infoProducto = {
       ...item,
       quantity: cantidad,
     };
-    console.log(infoProducto);
+    addToCart(infoProducto);
     navigate("/cart");
   };
 
@@ -44,11 +45,12 @@ export const ProductDetailContainer = () => {
         <ProductDetail
           item={item}
           count={count}
-          increment={increment}
-          decrement={decrement}
           reset={reset}
-          onAdd={onAdd}
           initial={initial}
+          onAdd={onAdd}
+          stock={item.stock}
+          subOne={subOne}
+          addOne={addOne}
         />
       )}
     </div>
