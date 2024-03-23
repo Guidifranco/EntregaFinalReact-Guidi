@@ -1,8 +1,26 @@
-# React + Vite
+# Minim Cuadros
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## E-commerce de cuadros minimalistas.
 
-Currently, two official plugins are available:
+### Tecnologias utilizadas para el desarrollo:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    Proyecto desarrollado con React, Node y Vite
+
+### Librerias utilizadas:
+
+    - React Router ->  npm install react-router-dom
+    - Material UI  -> npm install @mui/material @emotion/react @emotion/styled
+    - Formik       -> npm install formik
+    - Yup          -> npm install yup
+
+#### Credenciales a configurar para el funcionamiento del e-commerce:
+
+- VITE_APIKEY =
+- VITE_AUTH_DOMAIN =
+- VITE_PROJECT_ID =
+- VITE_STORAGE_BUCKET =
+- VITE_MESSAGING =
+- VITE_APP_ID =
+
+#### CONTACTO
+    -Email: guidifranco10@gmail.com

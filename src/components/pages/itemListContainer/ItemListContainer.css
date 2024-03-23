@@ -5,9 +5,9 @@
   font-size: 36px;
   color: #333;
   font-weight: bold;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Establece una fuente elegante */
-  border-radius: 8px; /* Añade bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .productCardContainer {

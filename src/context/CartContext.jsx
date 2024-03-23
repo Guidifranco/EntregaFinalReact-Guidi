@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
 
   const isInCart = (id) => {
     // función Existe que tiene un some que devuelve true o false, para determinar si el elemento ya está en el carrito
@@ -27,20 +27,25 @@ export const CartContextProvider = ({ children }) => {
         }
       });
 
-      setCart(newArray);
-    } else {
       //si no existe el elemento en el carrito, se agrega
+      setCart(newArray);
+      localStorage.setItem("cart", JSON.stringify(newArray));
+    } else {
+      //si existe el elemento en el carrito
       setCart([...cart, product]);
+      localStorage.setItem("cart", JSON.stringify([...cart, product]));
     }
   };
 
   const removeId = (id) => {
     let newArray = cart.filter((elemento) => elemento.id !== id);
     setCart(newArray);
+    localStorage.setItem("cart", JSON.stringify(newArray));
   };
 
   const clearCart = () => {
     setCart([]);
+    localStorage.removeItem("cart");
   };
 
   const getTotalItems = () => {
@@ -52,7 +57,7 @@ export const CartContextProvider = ({ children }) => {
   };
   const getTotalPrice = () => {
     let total = cart.reduce((acc, elemento) => {
-      return acc + (elemento.quantity * elemento.price);
+      return acc + elemento.quantity * elemento.price;
     }, 0);
 
     return total;

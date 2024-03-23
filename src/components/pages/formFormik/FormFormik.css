@@ -1,0 +1,35 @@
+.formulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  width: 50;
+}
+
+.orden {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.num-orden {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+.num-orden-id {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #225;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}

@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { ItemList } from "./ItemList";
 import "./ItemListContainer.css";
-import { getProducts } from "../../../productMock";
+import { db } from "../../../firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
+import { FadeLoader } from "react-spinners";
+import { SkeletonCard } from "../../common/skeleton/SkeletonCard";
 
 export const ItemListContainer = () => {
   const { category } = useParams();
@@ -11,23 +14,34 @@ export const ItemListContainer = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getProducts().then((resp) => {
-      if (category) {
-        const productsFilter = resp.filter(
-          (product) => product.category === category
-        );
-        setItems(productsFilter);
-      } else {
-        setItems(resp);
-      }
+    let productsCollection = collection(db, "products");
+    let consulta = productsCollection;
 
-      setIsLoading(false);
-    });
+    if (category) {
+      let productsCollectionFiltered = query(
+        productsCollection,
+        where("category", "==", category)
+      );
+      consulta = productsCollectionFiltered;
+    }
+
+    getDocs(consulta)
+      .then((res) => {
+        let arrayCompleto = res.docs.map((elemento) => {
+          return { ...elemento.data(), id: elemento.id };
+        });
+        setItems(arrayCompleto);
+      })
+      .finally(() => setIsLoading(false));
   }, [category]);
 
   return (
     <div>
-      {isLoading ? <h3>Cargando los cuadros..</h3> : <ItemList items={items} />}
+      {isLoading ? (
+        <SkeletonCard />
+      ) : (
+        <ItemList items={items} />
+      )}
     </div>
   );
 };

@@ -1,9 +1,6 @@
 import { ProductCardContainer } from "../../common/productCard/ProductCardContainer";
 
-
 export const ItemList = ({ items }) => {
-
-
   return (
     <div>
       <div className="titulo">

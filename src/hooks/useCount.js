@@ -1,11 +1,10 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 
-export const useCount = ({stock, initial=1}) => {
+export const useCount = ({ stock, initial = 1 }) => {
   const [count, setCount] = useState(initial);
 
-
   const reset = () => {
-    console.log("Se agrego al carrito");
     setCount(0);
   };
 
@@ -13,17 +12,17 @@ export const useCount = ({stock, initial=1}) => {
     if (count < stock) {
       setCount(count + 1);
     } else {
-        alert("Stock maximo")
+      Swal.fire("Stock máximo alcanzado");
     }
-  }
+  };
 
-    const subOne = () => {
-        if (count > 1) {
-          setCount(count - 1);
-        } else {
-          alert("no puede ser menos de 1");
-        }
-      };
+  const subOne = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    } else {
+      Swal.fire("Debes agregar por lo menos 1 producto al carrito")
+    }
+  };
 
   return { count, reset, addOne, subOne };
 };

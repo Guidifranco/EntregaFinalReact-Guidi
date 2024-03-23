@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 nav {
@@ -10,7 +11,7 @@ nav {
 .bulletPoint {
   list-style: none;
   padding: 10px;
-  background-color: rgb(232, 198, 249);
+  background-color: rgb(156, 151, 186);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,7 +19,17 @@ nav {
 }
 
 a {
+  font-size: 17px;
+  padding:10px;
   text-decoration: none;
+  color: black;
+  transition: all 0.3s ease;
+  font-family:'Times New Roman', Times, serif 
+}
+
+a:hover {
+  font-size: 18px;
+  color: rgb(54, 79, 89);
 }
 
 .cart {
