@@ -3,7 +3,7 @@ import { ProductDetail } from "./ProductDetail";
 import { useContext, useEffect, useState } from "react";
 import { getProduct } from "../../../productMock";
 import { useCount } from "../../../hooks/useCount";
-import { CartContext } from "../../../context/cartContext";
+import { CartContext } from "../../../context/CartContext";
 import { FadeLoader } from "react-spinners";
 import { db } from "../../../firebaseConfig";
 import { getDoc, doc, collection } from "firebase/firestore";

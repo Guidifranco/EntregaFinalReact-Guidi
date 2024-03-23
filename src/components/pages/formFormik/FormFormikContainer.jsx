@@ -1,7 +1,7 @@
 import { FormFormik } from "./FormFormik";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { CartContext } from "../../../context/cartContext";
+import { CartContext } from "../../../context/CartContext";
 import { db } from "../../../firebaseConfig";
 import { collection, doc, addDoc, updateDoc } from "firebase/firestore";
 import { useContext, useState } from "react";
